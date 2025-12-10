@@ -10,10 +10,10 @@ const {
 } = Astro.props;
 
 const partners = [
-  { name: "Business Finland", logo: "business-finland" },
-  { name: "EU Horizon", logo: "eu" },
-  { name: "Finnvera", logo: "finnvera" },
-  { name: "ELY Centre", logo: "ely" },
+  { name: "Business Finland", logo: "/logos/business-finland.svg", height: "h-10" },
+  { name: "EU Horizon", logo: "/logos/eu.svg", height: "h-10" },
+  { name: "Finnvera", logo: "/logos/finnvera.svg", height: "h-6" },
+  { name: "ELY Centre", logo: "/logos/ely.svg", height: "h-16" },
 ];
 ---
 
@@ -42,29 +42,57 @@ const partners = [
       <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16">
         {
           partners.map((partner) => (
-            <div class="flex items-center justify-center opacity-60 grayscale transition-all hover:opacity-100 hover:grayscale-0">
-              <span class="text-lg font-semibold text-white">{partner.name}</span>
+            <div class="flex items-center justify-center opacity-70 transition-all hover:opacity-100">
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                class={`${partner.height} w-auto`}
+              />
             </div>
           ))
         }
       </div>
     </div>
 
-    <!-- Additional credibility -->
-    <div class="mt-20 rounded-2xl border border-slate-700/50 bg-slate-800/50 p-8 backdrop-blur-sm">
-      <div class="grid gap-8 md:grid-cols-2">
-        <div>
-          <h3 class="text-xl font-semibold text-white">Kasvu Open Coach</h3>
-          <p class="mt-2 text-slate-300">
-            Active coach at Finland's premier growth accelerator, helping the country's most promising companies scale.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold text-white">Business Tampere Partner</h3>
-          <p class="mt-2 text-slate-300">
-            Providing funding advisory services through the Tampere region's official business development organization.
-          </p>
-        </div>
+  </div>
+</section>
+
+<!-- Partnerships Section - Light background -->
+<section class="bg-white px-4 py-20 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-7xl">
+    <p class="mb-12 text-center text-sm font-medium uppercase tracking-wider text-slate-500">
+      Official Partner & Coach
+    </p>
+
+    <div class="grid gap-12 md:grid-cols-2">
+      <!-- Kasvu Open -->
+      <div class="flex flex-col items-center text-center">
+        <a href="https://kasvuopen.co/en/" target="_blank" rel="noopener noreferrer" class="transition-opacity hover:opacity-80">
+          <img
+            src="/logos/kasvu-open.jpg"
+            alt="Kasvu Open"
+            class="h-20 w-auto"
+          />
+        </a>
+        <h3 class="mt-6 text-xl font-semibold text-slate-900">Kasvu Open Coach</h3>
+        <p class="mt-3 max-w-sm text-slate-600">
+          Active coach at Finland's premier growth accelerator, helping the country's most promising companies scale internationally.
+        </p>
+      </div>
+
+      <!-- Business Tampere -->
+      <div class="flex flex-col items-center text-center">
+        <a href="https://businesstampere.com/en/" target="_blank" rel="noopener noreferrer" class="transition-opacity hover:opacity-80">
+          <img
+            src="/logos/business-tampere.jpg"
+            alt="Business Tampere"
+            class="h-20 w-auto"
+          />
+        </a>
+        <h3 class="mt-6 text-xl font-semibold text-slate-900">Business Tampere Partner</h3>
+        <p class="mt-3 max-w-sm text-slate-600">
+          Providing funding advisory services through the Tampere region's official business development organization.
+        </p>
       </div>
     </div>
   </div>
