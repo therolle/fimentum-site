@@ -26,26 +26,26 @@ const stats = [
 ];
 ---
 
-<section class="gradient-hero relative min-h-screen overflow-hidden">
+<section class="section-dark min-h-screen">
   <!-- Decorative elements -->
   <div class="pointer-events-none absolute inset-0 overflow-hidden">
     <div
-      class="animate-float absolute -top-40 -right-40 h-80 w-80 rounded-full bg-indigo-500/10 blur-3xl"
+      class="blur-orb blur-orb-indigo animate-float absolute -top-40 -right-40 h-80 w-80"
     >
     </div>
     <div
-      class="animate-float absolute top-1/2 -left-20 h-60 w-60 rounded-full bg-cyan-500/10 blur-3xl"
+      class="blur-orb blur-orb-cyan animate-float absolute top-1/2 -left-20 h-60 w-60"
       style="animation-delay: 2s;"
     >
     </div>
     <div
-      class="animate-float absolute bottom-20 right-1/4 h-40 w-40 rounded-full bg-violet-500/10 blur-3xl"
+      class="blur-orb blur-orb-indigo animate-float absolute bottom-20 right-1/4 h-40 w-40"
       style="animation-delay: 4s;"
     >
     </div>
   </div>
 
-  <div class="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-4 py-24 sm:px-6 lg:px-8">
+  <div class="section-container relative flex min-h-screen flex-col justify-center">
     <div class="max-w-4xl">
       <h1 class="animate-fade-in text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
         <span class="block">{title.split(" ").slice(0, 2).join(" ")}</span>
@@ -57,10 +57,7 @@ const stats = [
       </p>
 
       <div class="animate-fade-in delay-200 mt-10 flex flex-col gap-4 sm:flex-row">
-        <a
-          href={primaryCta.href}
-          class="btn-gradient inline-flex items-center justify-center rounded-xl px-8 py-4 text-base font-semibold text-white transition-all hover:scale-[1.02]"
-        >
+        <a href={primaryCta.href} class="btn-primary">
           {primaryCta.text}
           <svg
             class="ml-2 h-5 w-5"
@@ -76,10 +73,7 @@ const stats = [
             />
           </svg>
         </a>
-        <a
-          href={secondaryCta.href}
-          class="inline-flex items-center justify-center rounded-xl border border-slate-600 bg-transparent px-8 py-4 text-base font-semibold text-white transition-all hover:border-slate-500 hover:bg-white/5"
-        >
+        <a href={secondaryCta.href} class="btn-secondary-dark">
           {secondaryCta.text}
         </a>
       </div>

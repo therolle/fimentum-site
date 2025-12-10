@@ -6,8 +6,8 @@ interface Props {
 const { siteName = "Fimentum" } = Astro.props;
 
 const navLinks = [
-  { href: "#services", label: "Services" },
   { href: "#track-record", label: "Track Record" },
+  { href: "#services", label: "Services" },
   { href: "#about", label: "About" },
   { href: "#process", label: "Process" },
   { href: "#contact", label: "Contact" },
@@ -107,10 +107,7 @@ const navLinks = [
         ))
       }
       <li class="pt-2">
-        <a
-          href="#contact"
-          class="btn-gradient block rounded-lg px-4 py-3 text-center text-base font-semibold text-white"
-        >
+        <a href="#contact" class="btn-primary block text-center">
           Get Started
         </a>
       </li>

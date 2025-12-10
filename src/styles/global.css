@@ -139,12 +139,20 @@ body {
   @apply scale-[1.02] shadow-lg shadow-indigo-500/25;
 }
 
-/* Secondary CTA - bordered button */
+/* Secondary CTA - bordered button (light backgrounds) */
 .btn-secondary {
   @apply inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-8 py-4 text-base font-medium text-slate-700 transition-all duration-200;
 }
 .btn-secondary:hover {
   @apply border-slate-400 bg-slate-50;
+}
+
+/* Secondary CTA - for dark backgrounds */
+.btn-secondary-dark {
+  @apply inline-flex items-center justify-center rounded-xl border border-slate-600 bg-transparent px-8 py-4 text-base font-semibold text-white transition-all duration-200;
+}
+.btn-secondary-dark:hover {
+  @apply border-slate-500 bg-white/5;
 }
 
 /* --- Cards --- */

@@ -18,7 +18,8 @@ All utilities are defined in `src/styles/global.css`. Use these instead of inlin
 | Component | CSS Class | Usage |
 |-----------|-----------|-------|
 | Primary CTA | `.btn-primary` | Main call-to-action buttons (gradient) |
-| Secondary CTA | `.btn-secondary` | Secondary actions (bordered) |
+| Secondary CTA | `.btn-secondary` | Secondary actions (bordered, light backgrounds) |
+| Secondary CTA Dark | `.btn-secondary-dark` | Secondary actions (bordered, dark backgrounds) |
 | Service Card | `.card-service` | Service grid items with hover lift |
 | Dark Section | `.section-dark` | Hero, Stats, About backgrounds |
 | Light Section | `.section-light` | White background sections |
@@ -171,14 +172,13 @@ text-slate-600 (body)
 ```
 
 ### Alternating Pattern
-1. Hero - Dark gradient
-2. Problem/Solution - White
-3. Services - Slate-50
-4. Stats - Dark gradient
-5. About - White
-6. Process - Slate-50
-7. Contact - White
-8. Footer - Slate-900
+1. Hero - Dark gradient (`.section-dark`)
+2. Credibility - White with border (`.section-light`)
+3. Services - Slate-50 (`.section-light-alt`)
+4. About - Slate-50 (`.section-light-alt`)
+5. Process - White (`.section-light`)
+6. Contact - Slate-50 (`.section-light-alt`)
+7. Footer - Slate-900
 
 ---
 
