@@ -2,71 +2,26 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import Stats from "../components/Stats.astro";
+import About from "../components/About.astro";
+import Process from "../components/Process.astro";
+import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Fimentum - Welcome" description="Build something amazing with Fimentum.">
+<Layout
+  title="Fimentum - Funding Expertise for Finnish Startups & Growth Companies"
+  description="Navigate the complex world of startup and growth funding with an experienced partner. From Business Finland to EU programs, we help you secure the capital you need."
+>
   <Header />
   <main>
-    <Hero
-      title="Build Something Amazing"
-      subtitle="A modern landing page boilerplate built with Astro and Tailwind CSS v4. Fast, accessible, and ready for production."
-      ctaText="Get Started"
-      ctaHref="#features"
-    />
-
-    <section id="features" class="px-4 py-24 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-7xl">
-        <h2 class="text-center text-3xl font-bold text-gray-900">Features</h2>
-        <p class="mx-auto mt-4 max-w-2xl text-center text-gray-600">
-          Everything you need to build a fast, modern website.
-        </p>
-        <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div class="rounded-lg border border-gray-200 bg-white p-6">
-            <h3 class="text-lg font-semibold text-gray-900">Lightning Fast</h3>
-            <p class="mt-2 text-gray-600">
-              Built with Astro for optimal performance. Ships zero JavaScript by default.
-            </p>
-          </div>
-          <div class="rounded-lg border border-gray-200 bg-white p-6">
-            <h3 class="text-lg font-semibold text-gray-900">Tailwind v4</h3>
-            <p class="mt-2 text-gray-600">
-              Modern utility-first CSS with the latest Tailwind CSS features.
-            </p>
-          </div>
-          <div class="rounded-lg border border-gray-200 bg-white p-6">
-            <h3 class="text-lg font-semibold text-gray-900">TypeScript</h3>
-            <p class="mt-2 text-gray-600">
-              Full TypeScript support with strict mode enabled for type safety.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="bg-gray-50 px-4 py-24 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-bold text-gray-900">About</h2>
-        <p class="mt-4 text-lg text-gray-600">
-          This is a boilerplate landing page ready for customization. Replace this content with your own story.
-        </p>
-      </div>
-    </section>
-
-    <section id="contact" class="px-4 py-24 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-bold text-gray-900">Get in Touch</h2>
-        <p class="mt-4 text-gray-600">
-          Ready to get started? Reach out and let's build something together.
-        </p>
-        <a
-          href="mailto:hello@example.com"
-          class="mt-8 inline-block rounded-lg bg-gray-900 px-8 py-3 font-medium text-white transition-colors hover:bg-gray-800"
-        >
-          Contact Us
-        </a>
-      </div>
-    </section>
+    <Hero />
+    <Services />
+    <Stats />
+    <About />
+    <Process />
+    <Contact />
   </main>
   <Footer />
 </Layout>
