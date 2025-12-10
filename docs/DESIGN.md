@@ -11,6 +11,28 @@
 
 ---
 
+## CSS Utility Classes
+
+All utilities are defined in `src/styles/global.css`. Use these instead of inline Tailwind classes.
+
+| Component | CSS Class | Usage |
+|-----------|-----------|-------|
+| Primary CTA | `.btn-primary` | Main call-to-action buttons (gradient) |
+| Secondary CTA | `.btn-secondary` | Secondary actions (bordered) |
+| Service Card | `.card-service` | Service grid items with hover lift |
+| Dark Section | `.section-dark` | Hero, Stats, About backgrounds |
+| Light Section | `.section-light` | White background sections |
+| Light Section Alt | `.section-light-alt` | Slate-50 background sections |
+| Section Container | `.section-container` | Max-width wrapper (max-w-7xl) |
+| Form Input | `.form-input` | All text inputs, textareas |
+| Form Label | `.form-label` | Input labels |
+| Icon Badge | `.gradient-badge` | Icon backgrounds (12x12, gradient) |
+| Blur Orb | `.blur-orb-indigo` / `.blur-orb-cyan` | Decorative floating orbs |
+| Gradient Text | `.gradient-text` | Gradient text effect |
+| Gradient Button | `.btn-gradient` | Legacy gradient button (prefer `.btn-primary`) |
+
+---
+
 ## Color Palette
 
 ### Primary Colors

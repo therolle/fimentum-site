@@ -123,3 +123,89 @@ body {
 .delay-400 {
   animation-delay: 400ms;
 }
+
+/* ===========================================
+   DESIGN SYSTEM UTILITIES
+   Based on /docs/DESIGN.md specifications
+   =========================================== */
+
+/* --- Buttons --- */
+
+/* Primary CTA - gradient button with hover effects */
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 px-8 py-4 text-base font-semibold text-white transition-all duration-200;
+}
+.btn-primary:hover {
+  @apply scale-[1.02] shadow-lg shadow-indigo-500/25;
+}
+
+/* Secondary CTA - bordered button */
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-8 py-4 text-base font-medium text-slate-700 transition-all duration-200;
+}
+.btn-secondary:hover {
+  @apply border-slate-400 bg-slate-50;
+}
+
+/* --- Cards --- */
+
+/* Service card with hover lift effect */
+.card-service {
+  @apply rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-200;
+}
+.card-service:hover {
+  @apply -translate-y-1 border-indigo-200 shadow-md;
+}
+
+/* --- Sections --- */
+
+/* Dark gradient section (Hero, Stats, About) */
+.section-dark {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #312e81 100%);
+  @apply relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8;
+}
+
+/* Light section (Services, Process) */
+.section-light {
+  @apply bg-white px-4 py-24 sm:px-6 lg:px-8;
+}
+
+/* Alternate light section */
+.section-light-alt {
+  @apply bg-slate-50 px-4 py-24 sm:px-6 lg:px-8;
+}
+
+/* Section container - max width with responsive padding */
+.section-container {
+  @apply mx-auto max-w-7xl;
+}
+
+/* --- Forms --- */
+
+/* Form input styling */
+.form-input {
+  @apply w-full rounded-lg border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 transition-colors focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500;
+}
+
+/* Form label styling */
+.form-label {
+  @apply mb-2 block text-sm font-medium text-slate-700;
+}
+
+/* --- Decorative --- */
+
+/* Gradient badge for icons */
+.gradient-badge {
+  @apply flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-500 text-white;
+}
+
+/* Floating blur orb decoration */
+.blur-orb {
+  @apply pointer-events-none absolute rounded-full blur-3xl;
+}
+.blur-orb-indigo {
+  @apply bg-indigo-500/10;
+}
+.blur-orb-cyan {
+  @apply bg-cyan-500/10;
+}

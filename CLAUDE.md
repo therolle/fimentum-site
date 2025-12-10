@@ -44,7 +44,15 @@ Each section is a standalone Astro component in `src/components/`.
 ### Deployment
 AWS Amplify via `amplify.yml`. Uses corepack to enable pnpm.
 
+## Design System
+
+**MANDATORY:** Before making ANY styling changes, read `/docs/DESIGN.md`.
+
+- All colors, spacing, typography, and component styles are defined there
+- Use the documented CSS utility classes (`.btn-primary`, `.card-service`, `.section-dark`, etc.)
+- Do not invent new patterns - if something is missing, add it to DESIGN.md first
+
 ## Documentation
 - `/docs/PLAN.md` - Implementation plan
 - `/docs/BRAND.md` - Brand strategy, positioning, tone of voice
-- `/docs/DESIGN.md` - Visual specs, colors, typography
+- `/docs/DESIGN.md` - Visual design system (colors, typography, components, CSS classes)
