@@ -1,43 +1,84 @@
-# Astro Starter Kit: Minimal
+# Fimentum Website
 
-```sh
-pnpm create astro@latest -- --template minimal
+Modern landing page for Fimentum Oy - funding advisory for Finnish startups and growth companies.
+
+## Tech Stack
+
+- **Framework:** Astro (Static Site Generation)
+- **Styling:** Tailwind CSS v4
+- **Language:** TypeScript
+- **Deployment:** AWS Amplify
+
+## Project Structure
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
+├── docs/                    # Project documentation
+│   ├── PLAN.md             # Implementation plan
+│   ├── BRAND.md            # Brand strategy & positioning
+│   └── DESIGN.md           # Visual design specs
 ├── public/
+│   ├── logo.webp           # Original logo (dark, for light backgrounds)
+│   ├── logo-white.webp     # White logo (for dark backgrounds)
+│   └── favicon.svg
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/
+│   │   ├── Header.astro    # Fixed nav with scroll behavior
+│   │   ├── Hero.astro      # Dark gradient hero with stats
+│   │   ├── Services.astro  # Service cards grid
+│   │   ├── Stats.astro     # Track record & partners
+│   │   ├── About.astro     # Founder bio section
+│   │   ├── Process.astro   # How we work steps
+│   │   ├── Contact.astro   # Contact form & info
+│   │   ├── Footer.astro    # Footer with social links
+│   │   └── Analytics.astro # Google Analytics 4
+│   ├── layouts/
+│   │   └── Layout.astro    # Base HTML layout
+│   ├── pages/
+│   │   └── index.astro     # Single-page landing
+│   └── styles/
+│       └── global.css      # Tailwind config & custom styles
+├── amplify.yml             # AWS Amplify build config
+├── astro.config.mjs
+├── package.json
+└── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Development
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+# Install dependencies
+pnpm install
 
-Any static assets, like images, can be placed in the `public/` directory.
+# Start dev server (port 8801)
+pnpm dev
 
-## 🧞 Commands
+# Build for production
+pnpm build
 
-All commands are run from the root of the project, from a terminal:
+# Preview production build
+pnpm preview
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## Environment Variables
 
-## 👀 Want to learn more?
+Copy `.env.example` to `.env` and configure:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```
+PUBLIC_GA_ID=G-XXXXXXXXXX  # Google Analytics 4 Measurement ID
+```
+
+## Deployment
+
+The site is configured for AWS Amplify deployment via `amplify.yml`.
+
+1. Connect repository to AWS Amplify
+2. Add `PUBLIC_GA_ID` environment variable in Amplify console
+3. Amplify auto-detects build settings from `amplify.yml`
+
+## Brand Assets
+
+- **Logo (dark):** `/public/logo.webp` - For light backgrounds
+- **Logo (white):** `/public/logo-white.webp` - For dark backgrounds
+
+See `/docs/BRAND.md` for brand guidelines and `/docs/DESIGN.md` for visual specifications.
