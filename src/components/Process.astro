@@ -3,6 +3,7 @@ interface Step {
   number: string;
   title: string;
   description: string;
+  icon: string;
 }
 
 interface Props {
@@ -20,86 +21,93 @@ const {
       title: "Discovery Call",
       description:
         "We start with a free consultation to understand your business, growth plans, and funding needs. No commitment required.",
+      icon: "phone",
     },
     {
       number: "02",
       title: "Funding Roadmap",
       description:
         "Based on your situation, we create a tailored funding strategy - identifying the best mix of grants, loans, and equity.",
+      icon: "map",
     },
     {
       number: "03",
       title: "Application & Execution",
       description:
         "We handle the heavy lifting - preparing applications, coordinating with funders, and managing the entire process.",
+      icon: "file-text",
     },
     {
       number: "04",
       title: "Ongoing Support",
       description:
         "After funding is secured, we help with reporting, compliance, and planning for your next funding round.",
+      icon: "shield-check",
     },
   ],
 } = Astro.props;
+
+// Lucide icons as inline SVGs (stroke-width 2 for better visibility)
+const icons: Record<string, string> = {
+  phone: `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>`,
+  map: `<path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/>`,
+  "file-text": `<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>`,
+  "shield-check": `<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>`,
+};
 ---
 
-<section id="process" class="section-light">
+<section id="process" class="section-dark">
   <div class="section-container">
     <div class="text-center">
-      <p class="text-sm font-semibold uppercase tracking-wider text-primary-600">Process</p>
-      <h2 class="mt-2 text-[2rem] font-bold text-slate-800 sm:text-[2.5rem]">
+      <p class="text-sm font-semibold uppercase tracking-wider text-cyan-400">Process</p>
+      <h2 class="mt-2 text-[2rem] font-bold text-white sm:text-[2.5rem]">
         {title}
       </h2>
-      <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-300">
         {subtitle}
       </p>
     </div>
 
-    <div class="mt-16">
-      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+    <!-- Steps with connecting line -->
+    <div class="relative mx-auto mt-16 max-w-4xl">
+      <!-- Vertical connecting line -->
+      <div class="absolute left-6 top-0 hidden h-full w-px bg-gradient-to-b from-primary-400 via-primary-500 to-accent-400 sm:left-8 md:block" aria-hidden="true"></div>
+
+      <div class="space-y-12">
         {
           steps.map((step, index) => (
-            <div class="relative">
-              {/* Connector line (hidden on last item and mobile) */}
-              {index < steps.length - 1 && (
-                <div class="absolute left-1/2 top-8 hidden h-px w-full bg-gradient-to-r from-indigo-300 to-cyan-300 lg:block" />
-              )}
-
-              <div class="card-service relative">
-                {/* Step number */}
-                <div class="gradient-badge mb-4 h-14 w-14 text-xl font-bold">
-                  {step.number}
+            <div class="relative flex gap-6 sm:gap-8">
+              <!-- Icon with number -->
+              <div class="relative z-10 flex-shrink-0">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 shadow-lg ring-1 ring-slate-700 sm:h-16 sm:w-16">
+                  <svg
+                    class="h-6 w-6 text-cyan-400 sm:h-8 sm:w-8"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    set:html={icons[step.icon]}
+                  />
                 </div>
+                <!-- Number -->
+                <span class="absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-500 text-xs font-bold text-white">
+                  {index + 1}
+                </span>
+              </div>
 
-                <h3 class="text-lg font-semibold text-slate-900">
+              <!-- Content -->
+              <div class="flex-1 pt-1 sm:pt-3">
+                <h3 class="text-[1.25rem] font-semibold text-white sm:text-[1.5rem]">
                   {step.title}
                 </h3>
-                <p class="mt-2 text-slate-600">{step.description}</p>
+                <p class="mt-2 text-slate-300">
+                  {step.description}
+                </p>
               </div>
             </div>
           ))
         }
       </div>
-    </div>
-
-    {/* CTA */}
-    <div class="mt-16 text-center">
-      <a href="#contact" class="btn-primary">
-        Start with a Free Consultation
-        <svg
-          class="ml-2 h-5 w-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 8l4 4m0 0l-4 4m4-4H3"
-          />
-        </svg>
-      </a>
     </div>
   </div>
 </section>
